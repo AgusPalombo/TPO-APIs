@@ -4,6 +4,7 @@ import Principal from '../sections/Principal';
 import Nosotros from '../sections/Nosotros';
 import Servicios from '../sections/Servicios';
 import Contacto from '../sections/Contacto';
+import Footer from '../sections/Footer';
 import "../assets/css/Home.css"
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Servicios />
       <Nosotros />
       <Contacto />
+      <Footer />
     </div>
   );
 };

@@ -1,13 +1,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 .principal-section {
-  padding: 100px 0; /* Ajusta el espaciado según sea necesario */
+  padding: 150px 0;
   display: flex;
   justify-content: space-between; 
   align-items: center;  
   overflow: hidden; 
 }
+
 
 .highlight {
   font-family: 'Dancing Script', cursive; 
@@ -15,16 +17,19 @@
   font-weight: 700;
 }
 
+.principal-section h1{
+  text-align: left;
+}
 
 .principal-section p {
-  font-size: 1.5rem; /* Ajusta el tamaño de la fuente del párrafo */
-  width: 100%; /* Limita el ancho del párrafo para que no ocupe todo el contenedor */
+  font-size: 1.5rem; 
+  width: 100%;
 }
 
 .dog-image img {
-  width: 800px; /* Establece el ancho de la imagen */
-  height: 600px; /* Establece la altura de la imagen */
-  object-fit: contain ; /* Ajusta la imagen para que cubra el área especificada */
+  width: 800px;
+  height: 600px;
+  object-fit: contain; 
 }
 
 .background-image {

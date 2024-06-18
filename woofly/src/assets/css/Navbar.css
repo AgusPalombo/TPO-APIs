@@ -36,6 +36,7 @@ nav{
 .custom-navbar .form-control {
   color: #2B3015;
   background-color: #FEF5E1;
+  border-radius: 5px;
 }
 
 .custom-dropdown {
