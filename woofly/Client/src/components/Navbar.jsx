@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, Container, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../assets/css/Navbar.css'; 
-import logo from '../assets/images/Logo.png'
+import '../assets/css/Navbar.css';
+import logo from '../assets/images/Logo.png';
 
 const MyNavbar = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${searchQuery}`);
+  };
+
+  const handleUserIconClick = () => {
+    navigate('/login');
+  };
+
   return (
     <Navbar fixed="top" bg="custom" expand="lg" className="custom-navbar">
       <Container>
@@ -30,18 +47,22 @@ const MyNavbar = () => {
             </NavDropdown>
             <Nav.Link href="#nosotros" className='nav-item-padding'>Nosotros</Nav.Link>
             <Nav.Link href="#contacto" className='nav-item-padding'>Contacto</Nav.Link>
-            <Form className="d-flex nav-item-padding" inline>
+            <Form className="d-flex nav-item-padding" inline onSubmit={handleSearchSubmit}>
               <FormControl
                 type="search"
                 placeholder="Buscar"
                 className="me-2"
                 aria-label="Search"
+                value={searchQuery}
+                onChange={handleSearchChange}
               />
-              <Button variant="outline-custom">Buscar</Button>
+              <Button type="submit" variant="outline-custom">Buscar</Button>
             </Form>
           </Nav>
           <Nav>
-            <Nav.Link href="#login"><FontAwesomeIcon icon={faUser} className="user-icon" /></Nav.Link>
+            <Nav.Link onClick={handleUserIconClick}>
+              <FontAwesomeIcon icon={faUser} className="user-icon" />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

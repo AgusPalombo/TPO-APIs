@@ -1,0 +1,62 @@
+.register-container {
+  background: linear-gradient(to bottom, #C05A21, #FEF5E1);
+}
+
+.register-box {
+  max-width: 500px; /* Ancho del formulario ajustado */
+  width: 100%;
+  padding: 2rem;
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.logo-link {
+  display: flex;
+  justify-content: center; /* Centrar el logo */
+  width: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #2B3015;
+}
+
+.highlight {
+  font-family: 'Dancing Script', cursive;
+  color: #C05A21;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #2B3015;
+}
+
+.custom-button {
+  background-color: #C05A21;
+  color: #FEF5E1;
+  border: none;
+}
+
+.custom-button:hover {
+  background-color: #A94A1C;
+  color: #FEF5E1;
+}
+
+.link {
+  color: #C05A21;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.small-text {
+  font-size: 0.9rem; /* Reducir el tamaño del texto */
+}
