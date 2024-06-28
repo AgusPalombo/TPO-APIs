@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+
 require('dotenv').config();
 
 const app = express();
@@ -12,8 +13,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/woofly', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
-
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -29,11 +28,9 @@ const authRoutes = require('./routes/auth');
 const searchRoutes = require('./routes/search');
 const serviceRoutes = require('./routes/services');
 
-
-
 app.use('/auth', authRoutes);
 app.use('/search', searchRoutes);
-app.use('/api', serviceRoutes);
+app.use('/services', serviceRoutes);
 
 app.use(express.static(path.join(__dirname, '../client/build')));
 

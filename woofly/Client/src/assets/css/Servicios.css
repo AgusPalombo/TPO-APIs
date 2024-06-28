@@ -1,76 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
-.services-container {
-  padding: 2rem;
+.servicios-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Ajusta el espacio entre las tarjetas */
+  padding: 20px;
 }
 
-.services-container h1{
-  font-size: 3.5rem;
-  color: #2B3015;
-}
-
-.title {
-  color: #2B3015;
-  font-family: 'Acme', sans-serif;
-}
-
-.services-title {
-  font-family: 'Acme', sans-serif;
-  font-size: 3rem; 
-  margin-bottom: 2rem;
-  color: #FEF5E1;
-}
-
-.service-card {
-  border-radius: 15px;
-  overflow: hidden;
-  height: 400px;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.card-body {
+.servicio-card {
+  width: 200px; /* Ajusta el tamaño de las tarjetas */
+  background-color: #4a4a4a; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  border: none; /* Quita el borde blanco */
+  border-radius: 10px; /* Opcional: para bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Sombra ligera */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
   text-align: center;
+}
+
+.servicio-card .card-title {
   font-family: 'Acme', sans-serif;
+  margin-bottom: 10px;
 }
 
-.services-text {
-  font-size: 1.3rem;
-  color: #FEF5E1;
-  margin-top: 50px;
+.servicio-card .card-text {
+  margin-bottom: 20px;
 }
 
-.service-button {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #C05A21 !important; 
-  color: #FEF5E1 !important; 
+.servicio-card .btn {
+  background-color: #C05A21;
   border: none;
-}
-
-.service-button:hover {
-  background-color: #FEF5E1 !important; 
-  color: #C05A21 !important; 
-}
-
-.highlight {
-  font-family: 'Dancing Script', cursive;
-  color: #C05A21;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-@media (max-width: 767px) {
-  .service-card {
-    margin-bottom: 30px; /* Espacio entre las cards en tamaño mobile */
-  }
-
-  .services-title {
-    font-size: 2rem; /* Tamaño más pequeño para títulos en móviles */
-  }
-  
-  .services-text {
-    font-size: 20px;
-  }
+  color: white;
+  font-family: 'Acme', sans-serif;
 }

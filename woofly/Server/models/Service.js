@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const serviceSchema = new mongoose.Schema({
-  nombre: { type: String, required: true },
-  categoria: { type: String, required: true },
-  duracion: { type: String, required: true },
-  frecuencia: { type: String, required: true },
-  costo: { type: Number, required: true },
-  providerEmail: { type: String, required: true }
+const ServiceSchema = new mongoose.Schema({
+  provider: { type: mongoose.Schema.Types.ObjectId, ref: 'Provider', required: true },
+  name: { type: String, required: true },
+  category: { type: String, required: true },
+  duration: { type: String, required: true },
+  frequency: { type: String, required: true },
+  cost: { type: Number, required: true }
 });
 
-module.exports = mongoose.model('Service', serviceSchema);
+module.exports = mongoose.model('Service', ServiceSchema);

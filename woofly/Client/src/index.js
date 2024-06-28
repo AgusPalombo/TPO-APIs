@@ -23,8 +23,8 @@ const App = () => {
         <Route path="/register-provider" element={<RegisterProvider setUser={setUser} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/home-proveedores" element={<HomeProveedores user={user} setUser={setUser} />} />
-        <Route path="/mis-servicios" element={<MisServicios user={user} />} />
-        <Route path="/crear-servicio" element={<CrearServicio user={user} />} />
+        <Route path="/crear-servicio" component={CrearServicio} />
+      <Route path="/mis-servicios" component={MisServicios} />
       </Routes>
     </Router>
   );
