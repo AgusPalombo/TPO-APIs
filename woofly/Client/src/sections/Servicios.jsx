@@ -4,60 +4,56 @@ import '../assets/css/Servicios.css';
 
 const Servicios = () => {
   return (
-    <Container className="services-container" id='servicios'>
-      <h1 className="title text-center">Nuestros Servicios</h1>
-      <p className="text-center">
+    <Container className="services-container">
+      <h1 className="text-center title">Nuestros Servicios</h1>
+      <p className="text-center title">
         Contamos con una amplia gama de servicios para brindarles una mejor calidad de vida a tus mascotas
       </p>
       <Row className="justify-content-center">
-        {/* Primera Card */}
-        <Col xs={12} md={6} lg={3} >
-          <Card className="service-card fondo">
-            <Card.Body>
+        <Col xs={12} md={6} lg={3} className="mb-4">
+          <Card>
+            <Card.Body className="card-body service-card">
               <Card.Title className="services-title">Petsitting</Card.Title>
               <Card.Text className='services-text'>
                 ¡Ahora puedes viajar tranquilo! De tus mascotas se encarga <span className="highlight">Woofly</span>
               </Card.Text>
-              <Button variant="primary" className="service-button">Ver más</Button>
+              <Button className="service-button">Ver más</Button>
             </Card.Body>
           </Card>
         </Col>
 
-        {/* Segunda Card */}
-        <Col xs={12} md={6} lg={3} >
-          <Card className="service-card fondo">
-            <Card.Body>
+        <Col xs={12} md={6} lg={3} className="mb-4">
+          <Card>
+            <Card.Body className="card-body service-card">
               <Card.Title className="services-title">Baños</Card.Title>
               <Card.Text className='services-text'>
-                Tus mascotas mas limpias y con mejor olor gracias a <span className="highlight">Woofly</span>.
+                Deja su diversión en manos de <span className="highlight">Woofly</span>. Tus mascotas más sociables y relajadas.
               </Card.Text>
-              <Button variant="primary" className="service-button">Ver más</Button>
+              <Button className="service-button">Ver más</Button>
             </Card.Body>
           </Card>
         </Col>
 
-        {/* Tercera Card */}
-        <Col xs={12} md={6} lg={3} >
-          <Card className="service-card fondo">
-            <Card.Body>
+        <Col xs={12} md={6} lg={3} className="mb-4">
+          <Card>
+            <Card.Body className="card-body service-card">
               <Card.Title className="services-title">Paseos</Card.Title>
               <Card.Text className='services-text'>
-                Deja su diversión en manos de <span className="highlight">Woofly</span>. Tus mascotas más sociables y relajadas en las noches.
+                Deja su diversión en manos de <span className="highlight">Woofly</span>. Tus mascotas más sociables y relajadas.
               </Card.Text>
-              <Button variant="primary" className="service-button">Ver más</Button>
+              <Button className="service-button">Ver más</Button>
             </Card.Body>
           </Card>
         </Col>
 
-        {/* Cuarta Card */}
-        <Col xs={12} md={6} lg={3} >
-          <Card className="service-card fondo">
-            <Card.Body>
+        <Col xs={12} md={6} lg={3} className="mb-4">
+          <Card className="service-card">
+            <Card.Body className="card-body service-card">
               <Card.Title className="services-title">Adiestramiento</Card.Title>
               <Card.Text className='services-text'>
-              Junto a <span className="highlight">Woofly</span> lograras que tu mascota sea mas sociable
+                Entrenamiento personalizado para mejorar el comportamiento de tu mascota.
               </Card.Text>
-              <Button variant="primary" className="service-button">Ver más</Button>
+              <Button className="service-button">Ver más</Button>
             </Card.Body>
           </Card>
         </Col>

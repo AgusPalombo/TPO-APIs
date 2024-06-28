@@ -24,7 +24,7 @@
 
 .title {
   font-size: 1.5rem;
-  color: #2B3015;
+  color: #000;
 }
 
 .highlight {
@@ -44,7 +44,7 @@
 }
 
 .custom-button:hover {
-  background-color: #A94A1C;
+  background-color: #2B3015;
   color: #FEF5E1;
 }
 
@@ -59,4 +59,15 @@
 
 .small-text {
   font-size: 0.9rem; /* Reducir el tamaño del texto */
+}
+
+.custom-remove-button {
+  background-color: #C05A21;
+  border-color: #C05A21;
+  color: white;
+}
+
+.custom-remove-button:hover {
+  background-color: #2B3015;
+  border-color: #2B3015;
 }

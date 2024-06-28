@@ -12,7 +12,7 @@
 
 .login-box {
   max-width: 500px; /* Ancho del formulario ajustado */
-  width: 100%;
+  width: 500px;
   padding: 2rem;
   background-color: #FFF;
   border-radius: 10px;
@@ -40,14 +40,14 @@
 }
 
 .custom-button {
-  background-color: #C05A21;
-  color: #FEF5E1;
+  background-color: #C05A21 !important;
+  color: #FEF5E1 !important;
   border: none;
 }
 
 .custom-button:hover {
-  background-color: #A94A1C;
-  color: #FEF5E1;
+  background-color: #A94A1C !important;
+  color: #FEF5E1 !important;
 }
 
 .link {

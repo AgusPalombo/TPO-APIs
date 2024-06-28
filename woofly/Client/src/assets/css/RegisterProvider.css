@@ -1,67 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+.register-container {
+  background: linear-gradient(to bottom, #C05A21, #FEF5E1);
+}
 
-.register-provider-container {
-  background-color: #FEF5E1;
+.register-box {
+  max-width: 500px; /* Ancho del formulario ajustado */
+  width: 100%;
   padding: 2rem;
-  border-radius: 15px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  font-family: 'Acme', sans-serif;
-  font-size: 3rem;
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.logo-link {
+  display: flex;
+  justify-content: center; /* Centrar el logo */
+  width: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
   color: #2B3015;
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-label {
-  color: #2B3015;
+.highlight {
+  font-family: 'Dancing Script', cursive;
+  color: #C05A21;
   font-weight: bold;
 }
 
-.form-control {
-  color: #2B3015;
-  border: none;
-  border-bottom: 1px solid #2B3015;
-  border-radius: 0;
-  background-color: transparent;
-  padding: 0.5rem 0;
-}
-
-.form-control::placeholder {
+.subtitle {
   color: #2B3015;
 }
 
-textarea.form-control {
-  resize: none;
-}
-
-.submit-button {
+.custom-button {
   background-color: #C05A21;
   color: #FEF5E1;
   border: none;
-  padding: 0.75rem 3rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5rem;
 }
 
-.submit-button:hover {
-  background-color: #2B3015;
+.custom-button:hover {
+  background-color: #A94A1C;
+  color: #FEF5E1;
 }
 
-@media (max-width: 767px) {
-  h1 {
-    font-size: 2.5rem;
-  }
+.link {
+  color: #C05A21;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.small-text {
+  font-size: 0.9rem; /* Reducir el tamaño del texto */
 }

@@ -1,0 +1,26 @@
+.container-fluid {
+    background: linear-gradient(135deg, #FEF5E1 0%, #C05A21 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 500px; /* Para limitar el ancho máximo del formulario */
+  }
+  
+  
+  .btn-primary {
+    background-color: #C05A21;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #A0441D;
+  }
+  

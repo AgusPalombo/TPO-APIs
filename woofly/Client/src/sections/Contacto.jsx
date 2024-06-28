@@ -66,7 +66,7 @@ const Contacto = () => {
           <Form.Control as="textarea" rows={3} placeholder="Escribe tu mensaje aquí" name="mensaje" onChange={handleChange} value={formData.mensaje} required />
         </Form.Group>
 
-        <Button variant="primary" type="submit" className="submit-button">
+        <Button type="submit" className="submit-button">
           Enviar
         </Button>
       </Form>

@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 .contacto-container {
-  background-color: #FEF5E1;
+  background-color: #C05A21; 
   padding: 2rem;
   border-radius: 15px;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  max-width: 600px; /* Limita el ancho del formulario */
+  max-width: 600px; 
   margin-left: auto;
   margin-right: auto;
 }
 
-h1 {
+.contacto-container h1 {
   font-family: 'Acme', sans-serif;
   font-size: 3rem;
-  color: #2B3015;
+  color: #FEF5E1; 
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -24,21 +24,21 @@ h1 {
 }
 
 .form-label {
-  color: #2B3015;
+  color: #FEF5E1; 
   font-weight: bold;
 }
 
 .form-control {
-  color: #2B3015;
+  color: #2B3015; 
   border: none;
-  border-bottom: 1px solid #2B3015; /* Agrega una línea inferior */
+  border-bottom: 1px solid #2B3015; 
   border-radius: 0;
-  background-color: transparent; /* Quita el fondo de los inputs */
-  padding: 0.5rem 0; /* Ajusta el espaciado interno */
+  background-color: #FEF5E1; 
+  padding: 0.5rem 0; 
 }
 
 .form-control::placeholder {
-  color: #2B3015;
+  color: #2B3015; 
 }
 
 textarea.form-control {
@@ -46,18 +46,22 @@ textarea.form-control {
 }
 
 .submit-button {
-  background-color: #C05A21;
+  background-color: #2B3015 !important; 
   color: #FEF5E1;
   border: none;
-  padding: 0.75rem 3rem; /* Ajusta el tamaño del botón */
+  padding: 0.75rem 3rem; 
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.5rem; /* Separación superior del botón */
+  margin-top: 1.5rem; 
+  width: auto; 
+  text-align: center;
+
 }
 
 .submit-button:hover {
-  background-color: #2B3015;
+  background-color: #676331; 
+  color: #FEF5E1; 
 }
 
 

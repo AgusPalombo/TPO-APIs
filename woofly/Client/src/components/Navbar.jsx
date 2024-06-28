@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/Navbar.css';
 import logo from '../assets/images/Logo.png';
 
-const MyNavbar = () => {
+const MyNavbar = ({ user, setUser }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
@@ -24,14 +24,19 @@ const MyNavbar = () => {
     navigate('/login');
   };
 
+  const handleLogout = () => {
+    setUser(null);
+    navigate('/');
+  };
+
   return (
     <Navbar fixed="top" bg="custom" expand="lg" className="custom-navbar">
       <Container>
         <Navbar.Brand href="#principal">
           <img
             src={logo}
-            width="65"
-            height="65"
+            width="60"
+            height="60"
             className="d-inline-block align-top"
             alt="Logo"
           />
@@ -45,9 +50,9 @@ const MyNavbar = () => {
               <NavDropdown.Item href="#action/3.3">Adiestramiento</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.4">Paseos</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#nosotros" className='nav-item-padding'>Nosotros</Nav.Link>
-            <Nav.Link href="#contacto" className='nav-item-padding'>Contacto</Nav.Link>
-            <Form className="d-flex nav-item-padding" inline onSubmit={handleSearchSubmit}>
+            <Nav.Link href="#nosotros" className="nav-item-padding">Nosotros</Nav.Link>
+            <Nav.Link href="#contacto" className="nav-item-padding">Contacto</Nav.Link>
+            <Form className="d-flex nav-item-padding" onSubmit={handleSearchSubmit}>
               <FormControl
                 type="search"
                 placeholder="Buscar"
@@ -60,9 +65,17 @@ const MyNavbar = () => {
             </Form>
           </Nav>
           <Nav>
-            <Nav.Link onClick={handleUserIconClick}>
-              <FontAwesomeIcon icon={faUser} className="user-icon" />
-            </Nav.Link>
+            {user ? (
+              <NavDropdown title={user.name} id="basic-nav-dropdown">
+                <NavDropdown.Item href="#services-contracted">Servicios Contratados</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={handleLogout}>Cerrar Sesión</NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <Nav.Link onClick={handleUserIconClick}>
+                <FontAwesomeIcon icon={faUser} className="user-icon" />
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

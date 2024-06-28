@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const providerSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
+  name: String,
   email: { type: String, unique: true },
-  phone: String
+  password: String,
+  phone: String,
+  address: String,
+  isProvider: { type: Boolean, default: true }
 });
 
-const Provider = mongoose.model('Provider', providerSchema);
-
-module.exports = Provider;
+module.exports = mongoose.model('Provider', providerSchema);

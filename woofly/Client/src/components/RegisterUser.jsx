@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../assets/css/RegisterUser.css';
 import logo from '../assets/images/Logo.png';
 
@@ -8,14 +9,16 @@ const petTypes = [
   'Perro',
   'Gato',
   'Ave',
-  'Roedor',
+  'Conejo',
   'Reptil',
-  'Pez'
+  'Pez',
+  'Roedor',
+  'Otro'
 ];
 
-const RegisterUser = () => {
+const RegisterUser = ({ setUser }) => {
   const [formData, setFormData] = useState({
-    firstName: '',
+    name: '',
     lastName: '',
     email: '',
     password: '',
@@ -24,6 +27,9 @@ const RegisterUser = () => {
     address: '',
     pets: [{ type: '', quantity: '' }]
   });
+  const [emailExists, setEmailExists] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -46,9 +52,38 @@ const RegisterUser = () => {
     setFormData({ ...formData, pets: [...formData.pets, { type: '', quantity: '' }] });
   };
 
-  const handleSubmit = (e) => {
+  const removePet = (index) => {
+    const newPets = formData.pets.filter((pet, i) => i !== index);
+    setFormData({ ...formData, pets: newPets });
+  };
+
+  const handleEmailBlur = async () => {
+    try {
+      const response = await axios.post('/api/auth/check-email', { email: formData.email });
+      setEmailExists(response.data.exists);
+    } catch (error) {
+      console.error('Error checking email:', error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Lógica de registro aquí
+    if (emailExists) {
+      setError('El email ya está en uso.');
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      setError('Las contraseñas no coinciden.');
+      return;
+    }
+    try {
+      const response = await axios.post('http://localhost:5000/auth/register', formData);
+      setUser(response.data.user);
+      navigate('/');
+    } catch (error) {
+      setError('Error registering user');
+      console.error('Error registering user:', error);
+    }
   };
 
   return (
@@ -63,6 +98,7 @@ const RegisterUser = () => {
               <h2 className="title">Registrate en <span className="highlight">Woofly</span></h2>
               <p className="subtitle">Únete a la mejor opción para tus hijos de cuatro patas</p>
             </div>
+            {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
               <Row>
                 <Col md={6}>
@@ -70,8 +106,8 @@ const RegisterUser = () => {
                     <Form.Control
                       type="text"
                       placeholder="Nombre"
-                      name="firstName"
-                      value={formData.firstName}
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
                       required
                     />
@@ -98,8 +134,10 @@ const RegisterUser = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  onBlur={handleEmailBlur}
                   required
                 />
+                {emailExists && <Alert variant="danger">El email ya está en uso.</Alert>}
               </Form.Group>
 
               <Form.Group controlId="formPassword" className="mb-3">
@@ -148,7 +186,7 @@ const RegisterUser = () => {
 
               {formData.pets.map((pet, index) => (
                 <Row key={index} className="mb-3">
-                  <Col md={6}>
+                  <Col md={5}>
                     <Form.Control
                       as="select"
                       name="type"
@@ -162,7 +200,7 @@ const RegisterUser = () => {
                       ))}
                     </Form.Control>
                   </Col>
-                  <Col md={6}>
+                  <Col md={5}>
                     <Form.Control
                       type="number"
                       placeholder="Cantidad"
@@ -171,6 +209,15 @@ const RegisterUser = () => {
                       onChange={(e) => handlePetChange(index, e)}
                       required
                     />
+                  </Col>
+                  <Col md={2} className="d-flex align-items-center">
+                    <Button
+                      variant="danger"
+                      onClick={() => removePet(index)}
+                      className="btn-sm custom-remove-button"
+                    >
+                      &times;
+                    </Button>
                   </Col>
                 </Row>
               ))}
@@ -185,7 +232,7 @@ const RegisterUser = () => {
             </Form>
 
             <div className="mt-4 text-center">
-              <p className="small-text">¿Ya tienes una cuenta? <a href="/login" className="link">Inicia sesión aquí</a></p>
+              <p className="small-text">¿Ya tienes una cuenta? <Link to="/login" className="link">Inicia sesión aquí</Link></p>
             </div>
           </div>
         </Col>

@@ -1,6 +1,6 @@
 {
-  "name": "woofly",
-  "version": "0.1.0",
+  "name": "woofly-client",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -15,9 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
-    "cors": "^2.8.5",
     "emailjs-com": "^3.2.0",
-    "express": "^4.19.2",
     "project-root": "file:..",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
@@ -25,6 +23,12 @@
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
+    "eslint": "^7.32.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -38,7 +42,7 @@
       "react-app",
       "react-app/jest"
     ]
-  },
+   },
   "browserslist": {
     "production": [
       ">0.2%",

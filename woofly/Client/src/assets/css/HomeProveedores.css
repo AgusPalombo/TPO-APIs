@@ -1,0 +1,19 @@
+.home-proveedores {
+    background: linear-gradient(to bottom, #FEF5E1 0%, #FEF5E1 55%,  #C05A21);
+    min-height: 100vh; 
+  }
+  
+  .welcome-section {
+    text-align: center;
+  }
+  
+  .welcome-title {
+    font-size: 3rem;
+    color: #b5631b;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.5rem;
+    color: #5c3b1e;
+  }
+  

@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
 const serviceSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
-  // Otros campos relevantes para los servicios
+  nombre: { type: String, required: true },
+  categoria: { type: String, required: true },
+  duracion: { type: String, required: true },
+  frecuencia: { type: String, required: true },
+  costo: { type: Number, required: true },
+  providerEmail: { type: String, required: true }
 });
 
-const Service = mongoose.model('Service', serviceSchema);
-
-module.exports = Service;
+module.exports = mongoose.model('Service', serviceSchema);
